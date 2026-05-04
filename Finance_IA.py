@@ -9,7 +9,7 @@ def configurar_ia(api_key):
 
 def crear_sesion():
     session = requests.Session()
-    # Esto simula ser un navegador real
+    #Simulacion para que streamlit logre llamar correctamente a yahoo finance y devuelva informacion
     session.headers.update({
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36'
     })
@@ -18,12 +18,11 @@ def crear_sesion():
 import yfinance as yf
 
 def obtener_datos(ticker):
-    # Ya no pasamos session=sesion. 
     # yfinance detectará curl_cffi y se "disfrazará" de Chrome automáticamente.
     stock = yf.Ticker(ticker)
     
     try:
-        # Intentamos obtener la info
+        #obtener informacion de a accion
         info = stock.info
         if not info: # A veces devuelve un dict vacío si hay error de red
             return {}, stock
