@@ -1,0 +1,7 @@
+# Ocultar secretos y credenciales
+.streamlit/secrets.toml
+.env
+
+# Ocultar bases de datos y archivos temporales
+usuarios.db
+__pycache__/
